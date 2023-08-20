@@ -3,7 +3,6 @@ package com.JNZ.project.service;
 import java.util.List;
 
 import com.JNZ.project.dto.DepartementDTO;
-import com.JNZ.project.dto.UserDTO;
 import com.JNZ.project.entities.DepartementEntity;
 
 public interface DepartementService {
