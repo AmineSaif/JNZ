@@ -4,28 +4,29 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 
 @Entity
 public class UserEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUser;
-    private String CO_NO;
-    private String nomUser;
-    private String prenomUser;
-    private Long idProfil;
-    private Boolean Actif;
-    private String Login;
-    private String MotPasse;
-    private Long idDepartement;
-    private Boolean ToutDocument;
-    private Boolean UpdatePassword;
-    
-    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idUser;
+	private String CO_NO;
+	private String nomUser;
+	private String prenomUser;
+	private Long idProfil;
+	private Boolean Actif;
+	private String Login;
+	private String MotPasse;
+	private Long idDepartement;
+	private Boolean ToutDocument;
+	private Boolean UpdatePassword;
 
-    public UserEntity() {
+
+
+	public UserEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -44,98 +45,98 @@ public class UserEntity {
 		ToutDocument = toutDocument;
 		UpdatePassword = updatePassword;
 	}
-    // Getters and setters
+	// Getters and setters
 
-    public Long getIdUser() {
-        return idUser;
-    }
+	public Long getIdUser() {
+		return idUser;
+	}
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
-    }
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
+	}
 
-    public String getCO_NO() {
-        return CO_NO;
-    }
+	public String getCO_NO() {
+		return CO_NO;
+	}
 
-    public void setCO_NO(String CO_NO) {
-        this.CO_NO = CO_NO;
-    }
+	public void setCO_NO(String CO_NO) {
+		this.CO_NO = CO_NO;
+	}
 
-    public String getNom() {
-        return nomUser;
-    }
+	public String getNom() {
+		return nomUser;
+	}
 
-    public void setNom(String nom) {
-        nomUser = nom;
-    }
+	public void setNom(String nom) {
+		nomUser = nom;
+	}
 
-    public String getPrenom() {
-        return prenomUser;
-    }
+	public String getPrenom() {
+		return prenomUser;
+	}
 
-    public void setPrenom(String prenom) {
-        prenomUser = prenom;
-    }
+	public void setPrenom(String prenom) {
+		prenomUser = prenom;
+	}
 
-    public Long getIdProfil() {
-        return idProfil;
-    }
+	public Long getIdProfil() {
+		return idProfil;
+	}
 
-    public void setIdProfil(Long idProfil) {
-        this.idProfil = idProfil;
-    }
+	public void setIdProfil(Long idProfil) {
+		this.idProfil = idProfil;
+	}
 
-    public Boolean getActif() {
-        return Actif;
-    }
+	public Boolean getActif() {
+		return Actif;
+	}
 
-    public void setActif(Boolean actif) {
-        Actif = actif;
-    }
+	public void setActif(Boolean actif) {
+		Actif = actif;
+	}
 
-    public String getLogin() {
-        return Login;
-    }
+	public String getLogin() {
+		return Login;
+	}
 
-    public void setLogin(String login) {
-        Login = login;
-    }
+	public void setLogin(String login) {
+		Login = login;
+	}
 
-    public String getMotPasse() {
-        return MotPasse;
-    }
+	public String getMotPasse() {
+		return MotPasse;
+	}
 
-    public void setMotPasse(String motPasse) {
-        MotPasse = motPasse;
-    }
+	public void setMotPasse(String motPasse) {
+		MotPasse = motPasse;
+	}
 
-    public Long getIdDepartement() {
-        return idDepartement;
-    }
+	public Long getIdDepartement() {
+		return idDepartement;
+	}
 
-    public void setIdDepartement(Long idDepartement) {
-        this.idDepartement = idDepartement;
-    }
+	public void setIdDepartement(Long idDepartement) {
+		this.idDepartement = idDepartement;
+	}
 
-    public Boolean getToutDocument() {
-        return ToutDocument;
-    }
+	public Boolean getToutDocument() {
+		return ToutDocument;
+	}
 
-    public void setToutDocument(Boolean toutDocument) {
-        ToutDocument = toutDocument;
-    }
+	public void setToutDocument(Boolean toutDocument) {
+		ToutDocument = toutDocument;
+	}
 
 
 
 
 	public Boolean getUpdatePassword() {
-        return UpdatePassword;
-    }
+		return UpdatePassword;
+	}
 
-    public void setUpdatePassword(Boolean updatePassword) {
-        UpdatePassword = updatePassword;
-    }
+	public void setUpdatePassword(Boolean updatePassword) {
+		UpdatePassword = updatePassword;
+	}
 
 	@Override
 	public String toString() {
@@ -145,7 +146,8 @@ public class UserEntity {
 				+ UpdatePassword + "]";
 	}
 
-	
-    
-    
+	@OneToOne(mappedBy = "user")
+	private ProfileEntity user;
+
+
 }
