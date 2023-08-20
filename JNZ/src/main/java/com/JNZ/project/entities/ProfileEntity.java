@@ -1,10 +1,15 @@
 package com.JNZ.project.entities;
 
-import jakarta.persistence.CascadeType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Profile")
+@Getter
+@Setter
+@AllArgsConstructor
 public class ProfileEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

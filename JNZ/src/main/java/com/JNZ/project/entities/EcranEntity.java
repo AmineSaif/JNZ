@@ -1,9 +1,15 @@
 package com.JNZ.project.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Ecran")
+@Getter
+@Setter
+@AllArgsConstructor
 public class EcranEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
